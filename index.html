@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML</title>
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Form -->
+  <form action="#" id="redirectForm">
+    <input type="text" id="result" placeholder="Enter a value">
+    <input type="submit" id="checkResult" value="Submit">
+  </form>
+
+  <!-- Script -->
+  <script>
+    function check(event) {
+      event.preventDefault(); // Prevent default form submission
+      const inputValue = document.getElementById('result').value.trim();
+      
+      if (inputValue) {
+        // Construct the URL
+        const url = 'https://shikkhanobish.com/uploads/final_2024_' + inputValue + '.pdf';
+        
+        // Redirect to the generated URL
+        window.location.href = url;
+      } else {
+        alert('Please enter a value.');
+      }
+    }
+
+    document.getElementById('redirectForm').addEventListener('submit', check);
+  </script>
+</body>
+</html>
